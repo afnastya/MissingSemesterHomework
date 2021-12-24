@@ -1,6 +1,7 @@
+import os
 import telebot
 
-TELEGRAM_TOKEN = input()
+TELEGRAM_TOKEN = os.environ.get('TELEGRAM_TOKEN')
 bot = telebot.TeleBot(TELEGRAM_TOKEN)
 
 @bot.message_handler(content_types=["text"])
