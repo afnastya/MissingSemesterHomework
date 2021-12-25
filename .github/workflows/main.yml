@@ -1,9 +1,12 @@
 name: CI/CD
 
-on: push
+on:
+  push:
+    branches:
+      - 'main'
 
 jobs:
-  check:
+  linter-check:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
@@ -14,8 +17,11 @@ jobs:
           pip3 install pylint pyTelegramBotAPI
       - name: Pylint check
         run: pylint *.py --disable=missing-docstring
-  push-image:
-    needs: check
+
+  push-docker-image:
+    needs: 
+      linter-check:
+        success
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
