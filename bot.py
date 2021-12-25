@@ -9,6 +9,6 @@ bot = telebot.TeleBot(TELEGRAM_TOKEN)
 
 @bot.message_handler(content_types=["text"])
 def send_meme(message):
-    bot.send_photo(message.char.id, "memes/meme1.jpg")
+    bot.send_photo(message.chat.id, "memes/meme1.jpg")
 
 bot.polling(none_stop=True)
