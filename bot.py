@@ -29,7 +29,7 @@ def send_meme(message):
 
 
 def meme_markup():
-    return types.ReplyKeyboardMarkup(types.KeyboardButton("Get Meme"))
+    return types.ReplyKeyboardMarkup.row(types.KeyboardButton("Get Meme"))
 
 
 bot.polling(none_stop=True)
