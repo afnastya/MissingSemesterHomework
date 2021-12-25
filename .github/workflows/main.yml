@@ -28,5 +28,5 @@ jobs:
 
       - name: Push Docker image to Docker Hub
         run: |
-          docker build -t mybot -f ../../Dockerfile.dockerfile
+          docker build -t mybot -f ../../Dockerfile.dockerfile .
           docker push mybot
