@@ -5,7 +5,7 @@ import telebot
 TELEGRAM_TOKEN = os.environ.get('TELEGRAM_TOKEN')
 bot = telebot.TeleBot(TELEGRAM_TOKEN)
 
-memes_number = len(os.listdir('memes/'))
+memes_number = len(os.listdir('memes'))
 
 @bot.message_handler(content_types=["text"])
 def send_meme(message):
