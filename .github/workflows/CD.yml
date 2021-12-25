@@ -1,11 +1,14 @@
 name: Publish docker image
 
 on:
-  push
+  workflow_run:
+    workflows: ["Testing"]
+    types: [completed]
 
 jobs:
   push-docker-image:
     runs-on: ubuntu-20.04
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
       - uses: actions/checkout@v2
       
