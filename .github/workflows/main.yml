@@ -31,4 +31,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: mybot:latest
+          tags: ${{ secrets.DOCKER_USERNAME }}/missing_semester_homework:latest
