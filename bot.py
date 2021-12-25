@@ -18,7 +18,7 @@ def start_bot(message):
         reply_markup=meme_markup())
 
 
-@bot.message_handler(func=lambda msg: msg.text == "Get Meme!", content_types=["text"])
+@bot.message_handler(func=lambda msg: msg.text == "Get Meme", content_types=["text"])
 def send_meme(message):
     meme_id = random.randint(1, memes_number)
     with open(f'memes/meme{meme_id}.jpg', 'rb') as meme:
@@ -29,7 +29,7 @@ def send_meme(message):
 
 
 def meme_markup():
-    return types.ReplyKeyboardMarkup(types.KeyboardButton("Get Meme!"))
+    return types.ReplyKeyboardMarkup(types.KeyboardButton("Get Meme"))
 
 
 bot.polling(none_stop=True)
