@@ -22,4 +22,4 @@ jobs:
         if: ${{ success() }}
         uses: ncipollo/release-action@v1.9.0
         with:
-          tag: 'new'
+          tag: ${{ github.run_id }}
