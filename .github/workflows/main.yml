@@ -26,7 +26,8 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_ACCESS_TOKEN }}
 
-      - name: Push Docker image to Docker Hub
-        run: |
-          docker build -t mybot -f Dockerfile.dockerfile .
-          docker push mybot
+      - name: Build & push Docker image to Docker Hub
+        uses: docker/build-push-action@v2
+        with:
+          push: true
+          tags: mybot:latest
