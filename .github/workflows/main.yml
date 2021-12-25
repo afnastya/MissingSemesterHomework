@@ -20,8 +20,7 @@ jobs:
 
   push-docker-image:
     needs: 
-      linter-check:
-        success
+      linter-check: success
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
