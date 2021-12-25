@@ -21,3 +21,5 @@ jobs:
       - name: Create release
         if: ${{ success() }}
         uses: ncipollo/release-action@v1.9.0
+        with:
+          tag: 'new'
