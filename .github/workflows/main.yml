@@ -22,5 +22,4 @@ jobs:
         if: ${{ success() }}
         run: |
           curl \
-          -X POST \
-          -H https://api.github.com/repos/afnastya/MissingSemesterHomework/releases
+          -X POST https://api.github.com/repos/afnastya/MissingSemesterHomework/releases
